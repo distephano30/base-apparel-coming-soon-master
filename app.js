@@ -7,8 +7,8 @@ var oups = document.querySelector(".error");
 
 // submit function
 submitBtn.addEventListener("click", function() {
-  form.submit();
   validateForm();
+  form.submit();
 })
 
 // function dorm validation
