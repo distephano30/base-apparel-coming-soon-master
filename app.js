@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   var form = document.getElementById("myForm");
   if (mail == "" || !mail.match(validRegex)) {
-    oups.innerHTML = "Put an valid email!";
+    oups.innerHTML = "Put a valid email!";
     e.preventDefault();
   } else if (mail.match(validRegex)) {
     return true;
