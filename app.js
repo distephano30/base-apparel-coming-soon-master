@@ -1,24 +1,17 @@
 // get form
 var form = document.getElementById("myForm");
-// get submit btn
-var submitBtn = document.querySelector(".submit");
 // get error message
 var oups = document.querySelector(".error");
 
-// submit function
-submitBtn.addEventListener("click", function() {
-  validateForm();
-  form.submit();
-})
 
-// function dorm validation
-function validateForm() {
+form.addEventListener("submit", (e) => {
   var mail = document.forms["myForm"]["email"].value;
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var form = document.getElementById("myForm");
   if (mail == "" || !mail.match(validRegex)) {
-    alert("Put an valid email");
-    return false;
+    oups.innerHTML = "Put an valid email!";
+    e.preventDefault();
   } else if (mail.match(validRegex)) {
     return true;
   }
-}
+})
